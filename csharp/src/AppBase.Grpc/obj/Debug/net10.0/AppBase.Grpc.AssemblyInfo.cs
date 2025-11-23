@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppBase.Grpc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6dd932933cf51f37f1f66a26e0bdf68ebd7a3797")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad37dfda418853eb5f630023b907d872a90eb78b")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppBase.Grpc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppBase.Grpc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

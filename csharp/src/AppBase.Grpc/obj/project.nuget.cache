@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yd9voCtvZ5g=",
+  "dgSpecHash": "G0M8psBYIAI=",
   "success": true,
-  "projectFilePath": "C:\\dev\\AppBase\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj",
+  "projectFilePath": "C:\\dev\\ABCSolution\\libs\\contracts\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\grpc.core.api\\2.60.0\\grpc.core.api.2.60.0.nupkg.sha512",

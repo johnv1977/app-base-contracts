@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\AppBase\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj": {}
+    "C:\\dev\\ABCSolution\\libs\\contracts\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj": {}
   },
   "projects": {
-    "C:\\dev\\AppBase\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj": {
+    "C:\\dev\\ABCSolution\\libs\\contracts\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\AppBase\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj",
+        "projectUniqueName": "C:\\dev\\ABCSolution\\libs\\contracts\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj",
         "projectName": "AppBase.Grpc",
-        "projectPath": "C:\\dev\\AppBase\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj",
+        "projectPath": "C:\\dev\\ABCSolution\\libs\\contracts\\csharp\\src\\AppBase.Grpc\\AppBase.Grpc.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\AppBase\\csharp\\src\\AppBase.Grpc\\obj\\",
+        "outputPath": "C:\\dev\\ABCSolution\\libs\\contracts\\csharp\\src\\AppBase.Grpc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
