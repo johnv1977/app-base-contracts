@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package users.v1;
+
+option csharp_namespace = "AppBase.Protos.Users.V1";
+
+service UsersService {
+  rpc GetProfile (GetProfileRequest) returns (GetProfileResponse);
+}
+
+message GetProfileRequest {
+  string user_id = 1;
+}
+
+message GetProfileResponse {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+}

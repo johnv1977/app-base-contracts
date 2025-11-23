@@ -1,0 +1,12 @@
+C:\dev\AppBase\csharp\src\AppBase.Grpc\bin\Debug\net10.0\AppBase.Grpc.deps.json
+C:\dev\AppBase\csharp\src\AppBase.Grpc\bin\Debug\net10.0\AppBase.Grpc.dll
+C:\dev\AppBase\csharp\src\AppBase.Grpc\bin\Debug\net10.0\AppBase.Grpc.pdb
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.csproj.AssemblyReference.cache
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.AssemblyInfoInputs.cache
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.AssemblyInfo.cs
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.csproj.CoreCompileInputs.cache
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.dll
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\refint\AppBase.Grpc.dll
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.pdb
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\ref\AppBase.Grpc.dll
