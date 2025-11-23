@@ -93,3 +93,5 @@ var reply = await client.LoginAsync(new LoginRequest { Email = "test@test.com" }
 El proyecto `AppBase.Grpc` está configurado para compilar automáticamente los archivos `.proto` ubicados en `../../protos`.
 
 Si agregas nuevos archivos `.proto`, asegúrate de que el patrón `Include` en el `.csproj` los cubra (actualmente `../../../protos/**/*.proto`).
+
+Solo debes compilar el proyecto `AppBase.Grpc` para que se generen los archivos de contrato, ejecuta `dotnet build` en el directorio `AppBase.Grpc`.

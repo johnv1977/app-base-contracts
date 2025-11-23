@@ -2,18 +2,102 @@ syntax = "proto3";
 
 package auth.v1;
 
-option csharp_namespace = "AppBase.Protos.Auth.V1";
+option csharp_namespace = "AppBase.Auth.V1";
+
+enum AuthMethod {
+  AUTH_METHOD_UNSPECIFIED = 0;
+  EMAIL_PASSWORD = 1;
+  ENTRA_ID = 2;
+  FIREBASE = 3;
+}
 
 service AuthService {
-  rpc Login (LoginRequest) returns (LoginResponse);
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+  rpc GetEnabledAuthMethods (GetEnabledAuthMethodsRequest) returns (GetEnabledAuthMethodsResponse);
+  rpc LoginEmail (LoginRequest) returns (LoginResponse);
+  rpc LoginWithEntraId (ExternalAuthRequest) returns (LoginResponse);
+  rpc LoginWithFirebase (ExternalAuthRequest) returns (LoginResponse);
+  rpc RefreshToken (RefreshTokenRequest) returns (LoginResponse);
+  rpc RequestPasswordReset (PasswordResetRequest) returns (PasswordResetResponse);
+  rpc ResetPassword (ResetPasswordRequest) returns (ResetPasswordResponse);
+  rpc ValidateToken (ValidateTokenRequest) returns (ValidateTokenResponse);
+}
+
+message RegisterRequest {
+  string email = 1;
+  string password = 2;
+  string confirm_password = 3;
+}
+
+message RegisterResponse {
+  bool success = 1;
+  string message = 2;
+  string user_id = 3;
 }
 
 message LoginRequest {
   string email = 1;
   string password = 2;
+  string device_id = 3;
+  string device_name = 4;
 }
 
 message LoginResponse {
+  bool success = 1;
+  string message = 2;
+  string access_token = 3;
+  string refresh_token = 4;
+  int64 expires_in = 5; // seconds
+}
+
+message RefreshTokenRequest {
+  string access_token = 1;
+  string refresh_token = 2;
+  string device_id = 3;
+}
+
+message ValidateTokenRequest {
   string token = 1;
-  int32 expires_in = 2;
+}
+
+message ValidateTokenResponse {
+  bool is_valid = 1;
+  string user_id = 2;
+  string email = 3;
+  repeated string roles = 4;
+}
+
+message ExternalAuthRequest {
+  string id_token = 1;
+  string device_id = 2;
+  string device_name = 3;
+}
+
+message PasswordResetRequest {
+  string email = 1;
+}
+
+message PasswordResetResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ResetPasswordRequest {
+  string email = 1;
+  string reset_token = 2;
+  string new_password = 3;
+  string confirm_password = 4;
+}
+
+message ResetPasswordResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message GetEnabledAuthMethodsRequest {
+  // Empty for now, can be extended in the future
+}
+
+message GetEnabledAuthMethodsResponse {
+  repeated AuthMethod enabled_auth_methods = 1;
 }

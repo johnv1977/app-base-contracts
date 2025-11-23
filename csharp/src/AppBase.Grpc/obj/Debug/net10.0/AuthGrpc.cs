@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace AppBase.Protos.Auth.V1 {
+namespace AppBase.Auth.V1 {
   public static partial class AuthService
   {
     static readonly string __ServiceName = "auth.v1.AuthService";
@@ -46,22 +46,110 @@ namespace AppBase.Protos.Auth.V1 {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AppBase.Protos.Auth.V1.LoginRequest> __Marshaller_auth_v1_LoginRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Protos.Auth.V1.LoginRequest.Parser));
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.RegisterRequest> __Marshaller_auth_v1_RegisterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.RegisterRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::AppBase.Protos.Auth.V1.LoginResponse> __Marshaller_auth_v1_LoginResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Protos.Auth.V1.LoginResponse.Parser));
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.RegisterResponse> __Marshaller_auth_v1_RegisterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.RegisterResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest> __Marshaller_auth_v1_GetEnabledAuthMethodsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse> __Marshaller_auth_v1_GetEnabledAuthMethodsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.LoginRequest> __Marshaller_auth_v1_LoginRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.LoginRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.LoginResponse> __Marshaller_auth_v1_LoginResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.LoginResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.ExternalAuthRequest> __Marshaller_auth_v1_ExternalAuthRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.ExternalAuthRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.RefreshTokenRequest> __Marshaller_auth_v1_RefreshTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.RefreshTokenRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.PasswordResetRequest> __Marshaller_auth_v1_PasswordResetRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.PasswordResetRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.PasswordResetResponse> __Marshaller_auth_v1_PasswordResetResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.PasswordResetResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.ResetPasswordRequest> __Marshaller_auth_v1_ResetPasswordRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.ResetPasswordRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.ResetPasswordResponse> __Marshaller_auth_v1_ResetPasswordResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.ResetPasswordResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.ValidateTokenRequest> __Marshaller_auth_v1_ValidateTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.ValidateTokenRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::AppBase.Auth.V1.ValidateTokenResponse> __Marshaller_auth_v1_ValidateTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::AppBase.Auth.V1.ValidateTokenResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::AppBase.Protos.Auth.V1.LoginRequest, global::AppBase.Protos.Auth.V1.LoginResponse> __Method_Login = new grpc::Method<global::AppBase.Protos.Auth.V1.LoginRequest, global::AppBase.Protos.Auth.V1.LoginResponse>(
+    static readonly grpc::Method<global::AppBase.Auth.V1.RegisterRequest, global::AppBase.Auth.V1.RegisterResponse> __Method_Register = new grpc::Method<global::AppBase.Auth.V1.RegisterRequest, global::AppBase.Auth.V1.RegisterResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "Login",
+        "Register",
+        __Marshaller_auth_v1_RegisterRequest,
+        __Marshaller_auth_v1_RegisterResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest, global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse> __Method_GetEnabledAuthMethods = new grpc::Method<global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest, global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetEnabledAuthMethods",
+        __Marshaller_auth_v1_GetEnabledAuthMethodsRequest,
+        __Marshaller_auth_v1_GetEnabledAuthMethodsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AppBase.Auth.V1.LoginRequest, global::AppBase.Auth.V1.LoginResponse> __Method_LoginEmail = new grpc::Method<global::AppBase.Auth.V1.LoginRequest, global::AppBase.Auth.V1.LoginResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "LoginEmail",
         __Marshaller_auth_v1_LoginRequest,
         __Marshaller_auth_v1_LoginResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AppBase.Auth.V1.ExternalAuthRequest, global::AppBase.Auth.V1.LoginResponse> __Method_LoginWithEntraId = new grpc::Method<global::AppBase.Auth.V1.ExternalAuthRequest, global::AppBase.Auth.V1.LoginResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "LoginWithEntraId",
+        __Marshaller_auth_v1_ExternalAuthRequest,
+        __Marshaller_auth_v1_LoginResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AppBase.Auth.V1.ExternalAuthRequest, global::AppBase.Auth.V1.LoginResponse> __Method_LoginWithFirebase = new grpc::Method<global::AppBase.Auth.V1.ExternalAuthRequest, global::AppBase.Auth.V1.LoginResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "LoginWithFirebase",
+        __Marshaller_auth_v1_ExternalAuthRequest,
+        __Marshaller_auth_v1_LoginResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AppBase.Auth.V1.RefreshTokenRequest, global::AppBase.Auth.V1.LoginResponse> __Method_RefreshToken = new grpc::Method<global::AppBase.Auth.V1.RefreshTokenRequest, global::AppBase.Auth.V1.LoginResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RefreshToken",
+        __Marshaller_auth_v1_RefreshTokenRequest,
+        __Marshaller_auth_v1_LoginResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AppBase.Auth.V1.PasswordResetRequest, global::AppBase.Auth.V1.PasswordResetResponse> __Method_RequestPasswordReset = new grpc::Method<global::AppBase.Auth.V1.PasswordResetRequest, global::AppBase.Auth.V1.PasswordResetResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RequestPasswordReset",
+        __Marshaller_auth_v1_PasswordResetRequest,
+        __Marshaller_auth_v1_PasswordResetResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AppBase.Auth.V1.ResetPasswordRequest, global::AppBase.Auth.V1.ResetPasswordResponse> __Method_ResetPassword = new grpc::Method<global::AppBase.Auth.V1.ResetPasswordRequest, global::AppBase.Auth.V1.ResetPasswordResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ResetPassword",
+        __Marshaller_auth_v1_ResetPasswordRequest,
+        __Marshaller_auth_v1_ResetPasswordResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::AppBase.Auth.V1.ValidateTokenRequest, global::AppBase.Auth.V1.ValidateTokenResponse> __Method_ValidateToken = new grpc::Method<global::AppBase.Auth.V1.ValidateTokenRequest, global::AppBase.Auth.V1.ValidateTokenResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ValidateToken",
+        __Marshaller_auth_v1_ValidateTokenRequest,
+        __Marshaller_auth_v1_ValidateTokenResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::AppBase.Protos.Auth.V1.AuthReflection.Descriptor.Services[0]; }
+      get { return global::AppBase.Auth.V1.AuthReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of AuthService</summary>
@@ -69,7 +157,55 @@ namespace AppBase.Protos.Auth.V1 {
     public abstract partial class AuthServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::AppBase.Protos.Auth.V1.LoginResponse> Login(global::AppBase.Protos.Auth.V1.LoginRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::AppBase.Auth.V1.RegisterResponse> Register(global::AppBase.Auth.V1.RegisterRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse> GetEnabledAuthMethods(global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AppBase.Auth.V1.LoginResponse> LoginEmail(global::AppBase.Auth.V1.LoginRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AppBase.Auth.V1.LoginResponse> LoginWithEntraId(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AppBase.Auth.V1.LoginResponse> LoginWithFirebase(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AppBase.Auth.V1.LoginResponse> RefreshToken(global::AppBase.Auth.V1.RefreshTokenRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AppBase.Auth.V1.PasswordResetResponse> RequestPasswordReset(global::AppBase.Auth.V1.PasswordResetRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AppBase.Auth.V1.ResetPasswordResponse> ResetPassword(global::AppBase.Auth.V1.ResetPasswordRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::AppBase.Auth.V1.ValidateTokenResponse> ValidateToken(global::AppBase.Auth.V1.ValidateTokenRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -104,24 +240,184 @@ namespace AppBase.Protos.Auth.V1 {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AppBase.Protos.Auth.V1.LoginResponse Login(global::AppBase.Protos.Auth.V1.LoginRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::AppBase.Auth.V1.RegisterResponse Register(global::AppBase.Auth.V1.RegisterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return Login(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return Register(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::AppBase.Protos.Auth.V1.LoginResponse Login(global::AppBase.Protos.Auth.V1.LoginRequest request, grpc::CallOptions options)
+      public virtual global::AppBase.Auth.V1.RegisterResponse Register(global::AppBase.Auth.V1.RegisterRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_Login, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_Register, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AppBase.Protos.Auth.V1.LoginResponse> LoginAsync(global::AppBase.Protos.Auth.V1.LoginRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.RegisterResponse> RegisterAsync(global::AppBase.Auth.V1.RegisterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return LoginAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return RegisterAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::AppBase.Protos.Auth.V1.LoginResponse> LoginAsync(global::AppBase.Protos.Auth.V1.LoginRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.RegisterResponse> RegisterAsync(global::AppBase.Auth.V1.RegisterRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_Login, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_Register, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse GetEnabledAuthMethods(global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetEnabledAuthMethods(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse GetEnabledAuthMethods(global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetEnabledAuthMethods, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse> GetEnabledAuthMethodsAsync(global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetEnabledAuthMethodsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse> GetEnabledAuthMethodsAsync(global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetEnabledAuthMethods, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.LoginResponse LoginEmail(global::AppBase.Auth.V1.LoginRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LoginEmail(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.LoginResponse LoginEmail(global::AppBase.Auth.V1.LoginRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_LoginEmail, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.LoginResponse> LoginEmailAsync(global::AppBase.Auth.V1.LoginRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LoginEmailAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.LoginResponse> LoginEmailAsync(global::AppBase.Auth.V1.LoginRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_LoginEmail, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.LoginResponse LoginWithEntraId(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LoginWithEntraId(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.LoginResponse LoginWithEntraId(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_LoginWithEntraId, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.LoginResponse> LoginWithEntraIdAsync(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LoginWithEntraIdAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.LoginResponse> LoginWithEntraIdAsync(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_LoginWithEntraId, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.LoginResponse LoginWithFirebase(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LoginWithFirebase(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.LoginResponse LoginWithFirebase(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_LoginWithFirebase, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.LoginResponse> LoginWithFirebaseAsync(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LoginWithFirebaseAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.LoginResponse> LoginWithFirebaseAsync(global::AppBase.Auth.V1.ExternalAuthRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_LoginWithFirebase, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.LoginResponse RefreshToken(global::AppBase.Auth.V1.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RefreshToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.LoginResponse RefreshToken(global::AppBase.Auth.V1.RefreshTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RefreshToken, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.LoginResponse> RefreshTokenAsync(global::AppBase.Auth.V1.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RefreshTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.LoginResponse> RefreshTokenAsync(global::AppBase.Auth.V1.RefreshTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RefreshToken, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.PasswordResetResponse RequestPasswordReset(global::AppBase.Auth.V1.PasswordResetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RequestPasswordReset(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.PasswordResetResponse RequestPasswordReset(global::AppBase.Auth.V1.PasswordResetRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RequestPasswordReset, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.PasswordResetResponse> RequestPasswordResetAsync(global::AppBase.Auth.V1.PasswordResetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RequestPasswordResetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.PasswordResetResponse> RequestPasswordResetAsync(global::AppBase.Auth.V1.PasswordResetRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RequestPasswordReset, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.ResetPasswordResponse ResetPassword(global::AppBase.Auth.V1.ResetPasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ResetPassword(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.ResetPasswordResponse ResetPassword(global::AppBase.Auth.V1.ResetPasswordRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ResetPassword, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.ResetPasswordResponse> ResetPasswordAsync(global::AppBase.Auth.V1.ResetPasswordRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ResetPasswordAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.ResetPasswordResponse> ResetPasswordAsync(global::AppBase.Auth.V1.ResetPasswordRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ResetPassword, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.ValidateTokenResponse ValidateToken(global::AppBase.Auth.V1.ValidateTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ValidateToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::AppBase.Auth.V1.ValidateTokenResponse ValidateToken(global::AppBase.Auth.V1.ValidateTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ValidateToken, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.ValidateTokenResponse> ValidateTokenAsync(global::AppBase.Auth.V1.ValidateTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ValidateTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::AppBase.Auth.V1.ValidateTokenResponse> ValidateTokenAsync(global::AppBase.Auth.V1.ValidateTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ValidateToken, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -137,7 +433,15 @@ namespace AppBase.Protos.Auth.V1 {
     public static grpc::ServerServiceDefinition BindService(AuthServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_Login, serviceImpl.Login).Build();
+          .AddMethod(__Method_Register, serviceImpl.Register)
+          .AddMethod(__Method_GetEnabledAuthMethods, serviceImpl.GetEnabledAuthMethods)
+          .AddMethod(__Method_LoginEmail, serviceImpl.LoginEmail)
+          .AddMethod(__Method_LoginWithEntraId, serviceImpl.LoginWithEntraId)
+          .AddMethod(__Method_LoginWithFirebase, serviceImpl.LoginWithFirebase)
+          .AddMethod(__Method_RefreshToken, serviceImpl.RefreshToken)
+          .AddMethod(__Method_RequestPasswordReset, serviceImpl.RequestPasswordReset)
+          .AddMethod(__Method_ResetPassword, serviceImpl.ResetPassword)
+          .AddMethod(__Method_ValidateToken, serviceImpl.ValidateToken).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -147,7 +451,15 @@ namespace AppBase.Protos.Auth.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, AuthServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_Login, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Protos.Auth.V1.LoginRequest, global::AppBase.Protos.Auth.V1.LoginResponse>(serviceImpl.Login));
+      serviceBinder.AddMethod(__Method_Register, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Auth.V1.RegisterRequest, global::AppBase.Auth.V1.RegisterResponse>(serviceImpl.Register));
+      serviceBinder.AddMethod(__Method_GetEnabledAuthMethods, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Auth.V1.GetEnabledAuthMethodsRequest, global::AppBase.Auth.V1.GetEnabledAuthMethodsResponse>(serviceImpl.GetEnabledAuthMethods));
+      serviceBinder.AddMethod(__Method_LoginEmail, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Auth.V1.LoginRequest, global::AppBase.Auth.V1.LoginResponse>(serviceImpl.LoginEmail));
+      serviceBinder.AddMethod(__Method_LoginWithEntraId, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Auth.V1.ExternalAuthRequest, global::AppBase.Auth.V1.LoginResponse>(serviceImpl.LoginWithEntraId));
+      serviceBinder.AddMethod(__Method_LoginWithFirebase, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Auth.V1.ExternalAuthRequest, global::AppBase.Auth.V1.LoginResponse>(serviceImpl.LoginWithFirebase));
+      serviceBinder.AddMethod(__Method_RefreshToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Auth.V1.RefreshTokenRequest, global::AppBase.Auth.V1.LoginResponse>(serviceImpl.RefreshToken));
+      serviceBinder.AddMethod(__Method_RequestPasswordReset, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Auth.V1.PasswordResetRequest, global::AppBase.Auth.V1.PasswordResetResponse>(serviceImpl.RequestPasswordReset));
+      serviceBinder.AddMethod(__Method_ResetPassword, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Auth.V1.ResetPasswordRequest, global::AppBase.Auth.V1.ResetPasswordResponse>(serviceImpl.ResetPassword));
+      serviceBinder.AddMethod(__Method_ValidateToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AppBase.Auth.V1.ValidateTokenRequest, global::AppBase.Auth.V1.ValidateTokenResponse>(serviceImpl.ValidateToken));
     }
 
   }

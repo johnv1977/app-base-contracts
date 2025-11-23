@@ -10,3 +10,4 @@ C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.dll
 C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\refint\AppBase.Grpc.dll
 C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.pdb
 C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\ref\AppBase.Grpc.dll
+C:\dev\AppBase\csharp\src\AppBase.Grpc\obj\Debug\net10.0\AppBase.Grpc.sourcelink.json
