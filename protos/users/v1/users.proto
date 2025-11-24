@@ -5,7 +5,11 @@ package users.v1;
 option csharp_namespace = "AppBase.Protos.Users.V1";
 
 service UsersService {
+  rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
   rpc GetProfile (GetProfileRequest) returns (GetProfileResponse);
+  rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse);
+  rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
+  rpc ListUsers (ListUsersRequest) returns (ListUsersResponse);
 }
 
 message GetProfileRequest {
@@ -24,4 +28,82 @@ message GetProfileResponse {
   string created_at = 9;
   string updated_at = 10;
   string last_login = 11;
+}
+
+message CreateUserRequest {
+  string name = 1;
+  string email = 2;
+  string last_name = 3;
+  string phone_number = 4;
+  string avatar_url = 5;
+  repeated string roles = 6;
+  string password = 7;
+}
+
+message CreateUserResponse {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string last_name = 4;
+  string phone_number = 5;
+  string avatar_url = 6;
+  bool is_active = 7;
+  repeated string roles = 8;
+  string created_at = 9;
+}
+
+message UpdateUserRequest {
+  string user_id = 1;
+  optional string name = 2;
+  optional string last_name = 3;
+  optional string phone_number = 4;
+  optional string avatar_url = 5;
+  optional bool is_active = 6;
+  repeated string roles = 7;
+}
+
+message UpdateUserResponse {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string last_name = 4;
+  string phone_number = 5;
+  string avatar_url = 6;
+  bool is_active = 7;
+  repeated string roles = 8;
+  string updated_at = 9;
+}
+
+message DeleteUserRequest {
+  string user_id = 1;
+}
+
+message DeleteUserResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ListUsersRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  optional string search = 3;
+  optional bool is_active = 4;
+}
+
+message ListUsersResponse {
+  repeated UserSummary users = 1;
+  int32 total_count = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message UserSummary {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string last_name = 4;
+  bool is_active = 5;
+  repeated string roles = 6;
+  string created_at = 7;
+  string last_login = 8;
 }

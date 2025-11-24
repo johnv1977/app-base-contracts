@@ -1,0 +1,318 @@
+syntax = "proto3";
+
+package authorization.v1;
+
+option csharp_namespace = "AppBase.Authorization.V1";
+
+// ==============================
+// Services
+// ==============================
+
+service ModulesService {
+  rpc CreateModule (CreateModuleRequest) returns (CreateModuleResponse);
+  rpc GetModule (GetModuleRequest) returns (GetModuleResponse);
+  rpc UpdateModule (UpdateModuleRequest) returns (UpdateModuleResponse);
+  rpc DeleteModule (DeleteModuleRequest) returns (DeleteModuleResponse);
+  rpc ListModules (ListModulesRequest) returns (ListModulesResponse);
+}
+
+service PermissionsService {
+  rpc CreatePermission (CreatePermissionRequest) returns (CreatePermissionResponse);
+  rpc GetPermission (GetPermissionRequest) returns (GetPermissionResponse);
+  rpc UpdatePermission (UpdatePermissionRequest) returns (UpdatePermissionResponse);
+  rpc DeletePermission (DeletePermissionRequest) returns (DeletePermissionResponse);
+  rpc ListPermissions (ListPermissionsRequest) returns (ListPermissionsResponse);
+  rpc ListPermissionsByModule (ListPermissionsByModuleRequest) returns (ListPermissionsResponse);
+}
+
+service RolesService {
+  rpc CreateRole (CreateRoleRequest) returns (CreateRoleResponse);
+  rpc GetRole (GetRoleRequest) returns (GetRoleResponse);
+  rpc UpdateRole (UpdateRoleRequest) returns (UpdateRoleResponse);
+  rpc DeleteRole (DeleteRoleRequest) returns (DeleteRoleResponse);
+  rpc ListRoles (ListRolesRequest) returns (ListRolesResponse);
+  rpc AssignPermissionsToRole (AssignPermissionsToRoleRequest) returns (AssignPermissionsToRoleResponse);
+  rpc RemovePermissionsFromRole (RemovePermissionsFromRoleRequest) returns (RemovePermissionsFromRoleResponse);
+  rpc GetRolePermissions (GetRolePermissionsRequest) returns (GetRolePermissionsResponse);
+}
+
+// ==============================
+// Module Messages
+// ==============================
+
+message CreateModuleRequest {
+  string title = 1;
+  string description = 2;
+  string icon_name = 3;
+}
+
+message CreateModuleResponse {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string icon_name = 4;
+  string created_at = 5;
+}
+
+message GetModuleRequest {
+  string module_id = 1;
+}
+
+message GetModuleResponse {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string icon_name = 4;
+  string created_at = 5;
+  string updated_at = 6;
+  int32 permissions_count = 7; // Number of permissions in this module
+}
+
+message UpdateModuleRequest {
+  string module_id = 1;
+  optional string title = 2;
+  optional string description = 3;
+  optional string icon_name = 4;
+}
+
+message UpdateModuleResponse {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string icon_name = 4;
+  string updated_at = 5;
+}
+
+message DeleteModuleRequest {
+  string module_id = 1;
+}
+
+message DeleteModuleResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ListModulesRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  optional string search = 3;
+}
+
+message ListModulesResponse {
+  repeated ModuleSummary modules = 1;
+  int32 total_count = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message ModuleSummary {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string icon_name = 4;
+  int32 permissions_count = 5;
+}
+
+// ==============================
+// Permission Messages
+// ==============================
+
+message CreatePermissionRequest {
+  string module_id = 1;
+  string name = 2;
+  string code = 3; // e.g., "users.read", "users.write"
+  string description = 4;
+}
+
+message CreatePermissionResponse {
+  string id = 1;
+  string module_id = 2;
+  string name = 3;
+  string code = 4;
+  string description = 5;
+  string created_at = 6;
+}
+
+message GetPermissionRequest {
+  string permission_id = 1;
+}
+
+message GetPermissionResponse {
+  string id = 1;
+  string module_id = 2;
+  string module_title = 3;
+  string name = 4;
+  string code = 5;
+  string description = 6;
+  string created_at = 7;
+  string updated_at = 8;
+}
+
+message UpdatePermissionRequest {
+  string permission_id = 1;
+  optional string name = 2;
+  optional string code = 3;
+  optional string description = 4;
+}
+
+message UpdatePermissionResponse {
+  string id = 1;
+  string module_id = 2;
+  string name = 3;
+  string code = 4;
+  string description = 5;
+  string updated_at = 6;
+}
+
+message DeletePermissionRequest {
+  string permission_id = 1;
+}
+
+message DeletePermissionResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ListPermissionsRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  optional string search = 3;
+}
+
+message ListPermissionsByModuleRequest {
+  string module_id = 1;
+  int32 page = 2;
+  int32 page_size = 3;
+  optional string search = 4;
+}
+
+message ListPermissionsResponse {
+  repeated PermissionSummary permissions = 1;
+  int32 total_count = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message PermissionSummary {
+  string id = 1;
+  string module_id = 2;
+  string module_title = 3;
+  string name = 4;
+  string code = 5;
+  string description = 6;
+}
+
+// ==============================
+// Role Messages
+// ==============================
+
+message CreateRoleRequest {
+  string id = 1; // string ID as required
+  string name = 2;
+  string description = 3;
+  repeated string permission_ids = 4; // Initial permissions to assign
+}
+
+message CreateRoleResponse {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  int32 permissions_count = 4;
+  string created_at = 5;
+}
+
+message GetRoleRequest {
+  string role_id = 1;
+}
+
+message GetRoleResponse {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  int32 permissions_count = 4;
+  int32 users_count = 5; // Number of users with this role
+  string created_at = 6;
+  string updated_at = 7;
+}
+
+message UpdateRoleRequest {
+  string role_id = 1;
+  optional string name = 2;
+  optional string description = 3;
+}
+
+message UpdateRoleResponse {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string updated_at = 4;
+}
+
+message DeleteRoleRequest {
+  string role_id = 1;
+}
+
+message DeleteRoleResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ListRolesRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  optional string search = 3;
+}
+
+message ListRolesResponse {
+  repeated RoleSummary roles = 1;
+  int32 total_count = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message RoleSummary {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  int32 permissions_count = 4;
+  int32 users_count = 5;
+}
+
+// ==============================
+// Role-Permission Assignment Messages
+// ==============================
+
+message AssignPermissionsToRoleRequest {
+  string role_id = 1;
+  repeated string permission_ids = 2;
+}
+
+message AssignPermissionsToRoleResponse {
+  bool success = 1;
+  string message = 2;
+  int32 permissions_assigned = 3;
+}
+
+message RemovePermissionsFromRoleRequest {
+  string role_id = 1;
+  repeated string permission_ids = 2;
+}
+
+message RemovePermissionsFromRoleResponse {
+  bool success = 1;
+  string message = 2;
+  int32 permissions_removed = 3;
+}
+
+message GetRolePermissionsRequest {
+  string role_id = 1;
+  int32 page = 2;
+  int32 page_size = 3;
+}
+
+message GetRolePermissionsResponse {
+  repeated PermissionSummary permissions = 1;
+  int32 total_count = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
