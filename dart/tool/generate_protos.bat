@@ -11,6 +11,9 @@ if not exist "%OUT_DIR%" mkdir "%OUT_DIR%"
 :: Generate Auth Protos
 protoc --proto_path=%PROTOS_DIR% --dart_out=grpc:%OUT_DIR% %PROTOS_DIR%\auth\v1\auth.proto
 
+:: Generate Authorization Protos
+protoc --proto_path=%PROTOS_DIR% --dart_out=grpc:%OUT_DIR% %PROTOS_DIR%\authorization\v1\authorization.proto
+
 :: Generate Users Protos
 protoc --proto_path=%PROTOS_DIR% --dart_out=grpc:%OUT_DIR% %PROTOS_DIR%\users\v1\users.proto
 

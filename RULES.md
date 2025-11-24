@@ -39,7 +39,34 @@ El repositorio se versiona como un todo.
     *   Incremento de versión **Major** o **Minor** del paquete/repositorio.
     *   **Git Tag**: Cada versión publicada debe tener un tag inmutable (ej. `v2.0.0`) para permitir reconstrucciones exactas.
 
-### Etiquetado (Tagging) en Git
+### Flujo Completo de Publicación
+
+Para publicar una nueva versión, sigue estos pasos **en orden**:
+
+#### 1. Actualizar CHANGELOG.md
+Documenta los cambios en `protos/CHANGELOG.md` siguiendo el formato establecido.
+
+#### 2. Añadir cambios al stage
+```bash
+git add protos/
+```
+
+#### 3. Hacer commit
+```bash
+git commit -m "feat: Descripción del cambio"
+```
+
+Ejemplos de mensajes de commit:
+- `feat: Add RBAC authorization module`
+- `fix: Correct field type in UserProfile`
+- `docs: Update API documentation`
+
+#### 4. Publicar en main
+```bash
+git push origin main
+```
+
+#### 5. Crear y publicar el tag
 
 El uso de tags es **obligatorio** para cada liberación de versión. Esto permite que los clientes (Dart/NuGet) apunten a una versión específica y estable del contrato.
 
@@ -47,11 +74,23 @@ El uso de tags es **obligatorio** para cada liberación de versión. Esto permit
 *   **Cuándo crear un tag**:
     *   Al publicar una nueva versión del paquete NuGet.
     *   Al cerrar una versión estable para que los clientes Dart la consuman vía Git.
-*   **Comando**:
+*   **Comandos**:
     ```bash
-    git tag -a v1.0.1 -m "Release v1.0.1: Added email field to User"
-    git push origin v1.0.1
+    # Crear tag anotado
+    git tag -a v1.1.0 -m "Release v1.1.0: Added RBAC authorization module"
+    
+    # Publicar el tag
+    git push origin v1.1.0
     ```
+
+#### 6. Verificar (Opcional)
+```bash
+# Ver todos los tags
+git tag -l
+
+# Ver detalles del último tag
+git show v1.1.0
+```
 
 ## 4. Reglas de Evolución (Protocol Buffers)
 
