@@ -1,0 +1,134 @@
+# .NET Build Artifacts
+## Archivos binarios y de compilación
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Archivos específicos de usuario y configuración local
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.sln.docstates
+
+## Archivos de caché de NuGet
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Carpetas de paquetes NuGet (si no usas restore automático)
+**/packages/*
+!**/packages/build/
+
+## Archivos generados por Visual Studio
+.vs/
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Archivos de compilación y caché
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.log
+*.tlog
+*.tmp
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+## Carpetas de resultados de pruebas
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## Archivos de cobertura de código
+*.coverage
+*.coveragexml
+
+## Rider (JetBrains IDE)
+.idea/
+*.sln.iml
+
+## Archivos de Mono
+mono_crash.*
+
+# Dart/Flutter Build Artifacts
+## Carpetas de build y caché
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+
+## Archivos generados
+*.dart.js
+*.dart.js_
+*.dart.js.deps
+*.dart.js.map
+*.info.json
+*.part
+
+## IDE específico (Android Studio, IntelliJ, VS Code)
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# Sistema Operativo
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+## Linux
+*~
+.directory
+.Trash-*
+
+# Archivos temporales de editores
+*.swp
+*.swo
+*~
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# Archivos de logs generales
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variables de entorno locales
+.env
+.env.local
+.env.*.local
